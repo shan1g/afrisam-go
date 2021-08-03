@@ -1,0 +1,89 @@
+
+@font-face {
+  font-family: 'frutiger-std';
+  src: url('../fonts/FrutigerCE55Roman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'frutiger-bold';
+  src: url('../fonts/FrutigerCE75Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+a {
+  color:#1e1e1e;
+  text-decoration:none;
+
+  &:hover, &:active, &:focus {
+    color:#1e1e1e;
+    text-decoration:none;
+  }
+}
+
+h1 {
+  font-family: 'frutiger-bold';
+  color:inherit;
+  margin-bottom:20px;
+  margin-top:20px;
+  -webkit-font-smoothing: antialiased;
+
+  -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+  -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+  -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+  transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+
+  &.centered {text-align:center}
+}
+
+h2 {
+  font-family: 'frutiger-bold';
+  color:inherit;
+  margin-bottom:20px;
+  margin-top:20px;
+  -webkit-font-smoothing: antialiased;
+
+  -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+  -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+  -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+  transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+
+  &.centered {text-align:center}
+  &.bold {
+    font-weight:bold;
+  }
+  span {
+    //color:@mainCol2;
+  }
+}
+
+h1 {
+  font-size:26px; line-height:26px;
+}
+h2 {
+  font-size:21px; line-height:21px;
+}
+h3 {
+  font-size:18px; line-height:18px;
+}
+
+p {
+  font-family: 'frutiger-std';
+  color:inherit;
+
+  &.centered {text-align:center}
+  &.bold {
+    font-weight:bold;
+  }
+}
+
+h1, h2, h3, p, a, blockqoute {
+  letter-spacing: 0;
+  font-weight: normal;
+  //font-style: normal;
+}
+
+
