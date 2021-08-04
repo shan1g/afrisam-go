@@ -627,7 +627,10 @@ footer .copyright {
   left: 0;
   width: 132px;
   height: 132px;
-  background: url('../images/header-info-icon.jpg') no-repeat 0 0;
+  border: 4px solid #5f5e5e;
+  border-top: 0;
+  border-left: 0;
+  background: url('../images/header-info-icon_01.jpg') no-repeat 0 0;
 }
 #video-banner {
   background: transparent url('../images/video-holder.png') no-repeat 50% 50%;
@@ -1006,10 +1009,10 @@ footer .copyright {
     background-size: 100%;
   }
   #top-banner .banner {
-    max-width: 80vw;
+    max-width: 90vw;
   }
   #top-banner .banner .info {
-    max-width: 80vw;
+    max-width: 90vw;
     margin: -1vw auto 0 auto;
     border: 1px solid #5f5e5e;
     padding: 14vw 7vw 7vw 7vw;
@@ -1022,23 +1025,26 @@ footer .copyright {
     width: 12vw;
     height: 12vw;
     background-size: cover;
+    border: 1px solid #5f5e5e;
+    border-top: 0;
+    border-left: 0;
   }
   #video-banner {
     margin: 3vw auto;
-    background-size: 80vw;
+    background-size: 90vw;
   }
   #video-banner .video {
-    max-width: 80vw;
+    max-width: 90vw;
     min-height: 57vw;
   }
   #video-banner .video iframe {
-    top: 65px;
+    top: 55px;
     width: 95%;
-    height: 188px;
+    height: 214px;
     border: 1px solid #5f5e5e;
   }
   #how-to .banner {
-    max-width: 80vw;
+    max-width: 90vw;
     margin: 0 auto;
   }
   #how-to .banner .info {
@@ -1055,14 +1061,14 @@ footer .copyright {
   }
   #how-to .banner .info ul li a {
     border: 1px solid #5f5e5e;
-    font-size: 2vw;
+    font-size: 2.8vw;
     line-height: 3vw;
     background: #ec1c23;
     color: #fff;
     padding: 1vw 1vw 1vw 3vw;
     z-index: 1;
-    bottom: 5px;
-    right: 11px;
+    bottom: 2px;
+    right: 13px;
   }
   #how-to .banner .info .back-block {
     border: 1px solid #5f5e5e;
@@ -1072,13 +1078,18 @@ footer .copyright {
     margin: -120px auto 3vw auto;
   }
   #sign-up .banner {
-    max-width: 80vw;
+    max-width: 90vw;
   }
   #sign-up .banner a {
-    font-size: 3vw;
+    font-size: 4vw;
     line-height: 3vw;
     padding: 2vw 2vw 2vw 4vw;
-    bottom: 10.5vw;
+    bottom: 12vw;
+    width: 97%;
+  }
+  section .row {
+    margin-right: 0;
+    margin-left: 0;
   }
   .content-section {
     margin: 1vw auto;
@@ -1087,6 +1098,15 @@ footer .copyright {
     margin-right: 0;
     margin-left: 0;
   }
+  header {
+    margin-bottom: 7vw;
+  }
+  header .links {
+    margin: 0;
+  }
+  header .links a {
+    transform: scale(1);
+  }
   footer {
     padding: 7vw 14vw;
     text-align: center;
@@ -1094,12 +1114,17 @@ footer .copyright {
   }
   footer .logo {
     margin-bottom: 6vw;
+    max-width: 40vw;
   }
   footer .footer-section {
     margin-bottom: 4vw;
   }
   footer .copyright {
     margin: 5vw auto;
+  }
+  .page-loader .logo {
+    max-width: 50vw;
+    margin-top: 50vw;
   }
 }
 @media screen and (min-width: 640px) and (max-width: 990px) {
@@ -1118,45 +1143,23 @@ footer .copyright {
     border: 1px solid #5f5e5e;
   }
 }
-@media screen and (min-width: 375px) and (max-width: 414px) {
-  #top-banner {
-    background: transparent url(../images/header-bg.jpg) no-repeat 50% 45%;
-    background-size: 100%;
-  }
-  #top-banner .banner {
-    max-width: 80vw;
-  }
-  #top-banner .banner .info {
-    max-width: 80vw;
-    margin: -1vw auto 0 auto;
-    border: 1px solid #5f5e5e;
-    padding: 14vw 7vw 7vw 7vw;
-  }
-  #top-banner .banner .info p {
-    font-size: 4vw;
-    line-height: 7vw;
-  }
-  #top-banner .banner .info:before {
-    width: 12vw;
-    height: 12vw;
-    background-size: cover;
-  }
+@media screen and (min-width: 376px) and (max-width: 414px) {
   #video-banner {
     margin: 3vw auto;
-    background-size: 80vw;
+    background-size: 90vw;
   }
   #video-banner .video {
-    max-width: 80vw;
+    max-width: 90vw;
     min-height: 57vw;
   }
   #video-banner .video iframe {
-    top: 55px;
+    top: 46px;
     width: 95%;
-    height: 159px;
+    height: 180px;
     border: 1px solid #5f5e5e;
   }
   #how-to .banner {
-    max-width: 80vw;
+    max-width: 90vw;
     margin: 0 auto;
   }
   #how-to .banner .info {
@@ -1173,37 +1176,120 @@ footer .copyright {
   }
   #how-to .banner .info ul li a {
     border: 1px solid #5f5e5e;
-    font-size: 2.7vw;
+    font-size: 2.8vw;
     line-height: 3vw;
     background: #ec1c23;
     color: #fff;
     padding: 1vw 1vw 1vw 3vw;
     z-index: 1;
-    bottom: 3px;
+    bottom: 2px;
     right: 13px;
   }
   #how-to .banner .info .back-block {
     border: 1px solid #5f5e5e;
     left: 31px;
+    height: 85%;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  #video-banner {
+    margin: 3vw auto;
+    background-size: 90vw;
+  }
+  #video-banner .video {
+    max-width: 90vw;
+    min-height: 57vw;
+  }
+  #video-banner .video iframe {
+    top: 42px;
+    width: 95%;
+    height: 162px;
+    border: 1px solid #5f5e5e;
+  }
+  #how-to .banner {
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+  #how-to .banner .info {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  #how-to .banner .info ul {
+    padding-left: 15px;
+  }
+  #how-to .banner .info ul li span {
+    border: 1px solid #5f5e5e;
+    font-size: 5vw;
+    line-height: 5vw;
+  }
+  #how-to .banner .info ul li a {
+    border: 1px solid #5f5e5e;
+    font-size: 2.8vw;
+    line-height: 3vw;
+    background: #ec1c23;
+    color: #fff;
+    padding: 1vw 1vw 1vw 3vw;
+    z-index: 1;
+    bottom: 2px;
+    right: 13px;
+  }
+  #how-to .banner .info .back-block {
+    border: 1px solid #5f5e5e;
+    left: 31px;
+    height: 85%;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  #video-banner {
+    margin: 3vw auto;
+    background-size: 90vw;
+  }
+  #video-banner .video {
+    max-width: 90vw;
+    min-height: 57vw;
+  }
+  #video-banner .video iframe {
+    top: 36px;
+    width: 95%;
+    height: 139px;
+    border: 1px solid #5f5e5e;
+  }
+  #how-to .banner {
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+  #how-to .banner .info {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  #how-to .banner .info ul {
+    padding-left: 15px;
+  }
+  #how-to .banner .info ul li span {
+    border: 1px solid #5f5e5e;
+    font-size: 5vw;
+    line-height: 5vw;
+  }
+  #how-to .banner .info ul li a {
+    border: 1px solid #5f5e5e;
+    font-size: 2.8vw;
+    line-height: 3vw;
+    background: #ec1c23;
+    color: #fff;
+    padding: 1vw 1vw 1vw 3vw;
+    z-index: 1;
+    bottom: 2px;
+    right: 13px;
+  }
+  #how-to .banner .info .back-block {
+    border: 1px solid #5f5e5e;
+    left: 28px;
+    height: 86%;
+    top: 16px;
+    width: 65%;
   }
   #sign-up {
-    margin: -100px auto 3vw auto;
-  }
-  #sign-up .banner {
-    max-width: 80vw;
-  }
-  #sign-up .banner a {
-    font-size: 3vw;
-    line-height: 3vw;
-    padding: 2vw 2vw 2vw 4vw;
-    bottom: 10.5vw;
-  }
-  .content-section {
-    margin: 1vw auto;
-  }
-  .content-section .row {
-    margin-right: 0;
-    margin-left: 0;
+    margin: -80px auto 3vw auto;
   }
 }
 @media only screen and (min-width: 35em) {
