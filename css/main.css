@@ -269,6 +269,335 @@ blockqoute {
 ::-moz-scrollbar-thumb {
   -webkit-box-shadow: inset 0 0 76px #ec1c23;
 }
+@keyframes loading-anim {
+  0% {
+    transform: translate(0, 0);
+    width: 0;
+  }
+  100% {
+    transform: translate(300%, 0);
+    width: 45%;
+  }
+}
+.page-loader {
+  position: fixed;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  background: #fff;
+  display: block;
+  will-change: opacity;
+  -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.8s;
+  -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.8s;
+  -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.8s;
+  transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.8s;
+}
+.page-loader .logo {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 10vw;
+  margin-top: 20vw;
+  -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+  -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+  -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+  transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+}
+.page-loader.loaded {
+  /*    display: none;*/
+  opacity: 0;
+}
+.page-loader.loaded .logo {
+  margin-top: -5vw;
+  opacity: 0;
+}
+.page-loader.loaded .loader-bar {
+  height: 0;
+}
+.page-loader .loader-bar {
+  width: 10%;
+  height: 10px;
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 9;
+  position: relative;
+  top: 2vw;
+}
+.page-loader .loader-bar:after {
+  content: '';
+  background: #7d7e81;
+  position: absolute;
+  width: 20%;
+  height: 45%;
+  left: 0;
+  top: 0px;
+  -webkit-animation: loading-anim 3s infinite forwards;
+  -khtml-animation: loading-anim 3s infinite forwards;
+  -moz-animation: loading-anim 3s infinite forwards;
+  -ms-animation: loading-anim 3s infinite forwards;
+  -o-animation: loading-anim 3s infinite forwards;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+  -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+  -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+  transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+}
+.page-loader .loader-bar:before {
+  content: '';
+  background: #ec1c23;
+  position: absolute;
+  width: 20%;
+  height: 45%;
+  left: 0;
+  top: 0px;
+  -webkit-animation: loading-anim 3s infinite reverse;
+  -khtml-animation: loading-anim 3s infinite reverse;
+  -moz-animation: loading-anim 3s infinite reverse;
+  -ms-animation: loading-anim 3s infinite reverse;
+  -o-animation: loading-anim 3s infinite reverse;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+  -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+  -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+  transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+}
+#rotateScreen {
+  display: block;
+  position: fixed;
+  opacity: 0;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background: #ec1c23;
+  background-size: cover;
+  will-change: transform;
+  -webkit-transition: all cubic-bezier(0.18, 0.89, 0.26, 1.08) 0.7s;
+  -khtml-transition: all cubic-bezier(0.18, 0.89, 0.26, 1.08) 0.7s;
+  -moz-transition: all cubic-bezier(0.18, 0.89, 0.26, 1.08) 0.7s;
+  -ms-transition: all cubic-bezier(0.18, 0.89, 0.26, 1.08) 0.7s;
+  transition: all cubic-bezier(0.18, 0.89, 0.26, 1.08) 0.7s;
+}
+#rotateScreen h1,
+#rotateScreen h2 {
+  color: #ffffff;
+  text-align: center;
+  font-style: normal;
+  opacity: 0;
+  max-width: 50vw;
+  margin: 0 auto 20px auto;
+  -webkit-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+  -khtml-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+  -moz-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+  -ms-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+  transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+}
+#rotateScreen h1 {
+  position: relative;
+  top: 40px;
+  font-size: 3vw;
+  line-height: 4vw;
+  transition-delay: 1.4s;
+  font-family: 'telkom-bold';
+}
+#rotateScreen h2 {
+  font-family: 'telkom-light';
+  position: relative;
+  top: 80px;
+  font-size: 2vw;
+  transition-delay: 1.6s;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(16deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+#rotateScreen span {
+  width: 64px;
+  height: 64px;
+  display: block;
+  margin: -14vw auto 55vw auto;
+  opacity: 0;
+  position: relative;
+  -webkit-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+  -khtml-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+  -moz-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+  -ms-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+  transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+  transition-delay: 1.2s;
+}
+#rotateScreen span:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 2;
+  width: 64px;
+  height: 64px;
+  display: block;
+  background: url(../images/rotate-display-icon2.svg) no-repeat top left;
+  -webkit-animation: rotate 2s infinite forwards;
+  -khtml-animation: rotate 2s infinite forwards;
+  -moz-animation: rotate 2s infinite forwards;
+  -ms-animation: rotate 2s infinite forwards;
+  -o-animation: rotate 2s infinite forwards;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+#rotateScreen span:before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 4;
+  width: 64px;
+  height: 64px;
+  display: block;
+  background: url(../images/rotate-display-icon.svg) no-repeat top left;
+}
+#rotateScreen.active {
+  opacity: 1;
+  z-index: 999;
+  display: block;
+}
+#rotateScreen.active h1,
+#rotateScreen.active h2 {
+  opacity: 1;
+  top: 0;
+}
+#rotateScreen.active span {
+  margin: 11vw auto 3vw auto;
+  opacity: 1;
+}
+#backUp {
+  display: inline-block;
+  background: #7d7e81;
+  padding: 1vw;
+  outline: 0 !important;
+  box-shadow: -2px 8px 19px -17px #272727;
+  position: fixed;
+  bottom: 0;
+  right: 2vw;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 4;
+  will-change: transform,opacity;
+  -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+  -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+  -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+  transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+  transform: translateY(300px);
+}
+#backUp img {
+  top: 7px;
+  -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+  -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+  -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+  transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+}
+#backUp:hover img {
+  transform: translateY(-5px);
+}
+#backUp.minimise {
+  font-size: 0;
+  color: #ec1c23;
+}
+#backUp.minimise img {
+  top: 10px;
+}
+#backUp.show {
+  opacity: 1;
+  visibility: visible;
+  width: auto;
+  transform: translateY(0);
+}
+@media screen and (min-width: 200px) and (max-width: 990px) {
+  #backUp {
+    bottom: 20vw;
+    right: 4vw;
+  }
+  #backUp img {
+    top: 1vw;
+  }
+  #backUp.minimise img {
+    top: 10px;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 990px) {
+  #backUp {
+    bottom: 10vw;
+    right: 2vw;
+  }
+  #backUp img {
+    top: 1vw;
+  }
+  #backUp.minimise img {
+    top: 10px;
+  }
+}
+header {
+  overflow: hidden;
+}
+header .links {
+  float: right;
+  display: flex;
+  margin: 1vw 1vw 1vw 1vw;
+}
+header .links a {
+  color: #ffffff;
+  font-family: 'frutiger-bold';
+  text-decoration: none;
+  margin-right: 10px;
+  background: #ec1c23;
+  padding: 1vw;
+  transform: scale(0.9);
+  -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+  -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+  -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+  transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+}
+header .links a:hover {
+  transform: scale(1);
+}
+header .links a:last-of-type {
+  margin-right: 0;
+}
+footer {
+  padding: 3vw 10vw;
+  background: #fff;
+}
+footer .logo {
+  max-width: 200px;
+}
+footer .footer-section h2 {
+  margin: 0 0 1vw 0;
+  color: #ec1c23;
+}
+footer .footer-section a {
+  display: block;
+  color: #7d7e81;
+}
+footer .copyright {
+  color: #7d7e81;
+  font-size: 12px;
+  line-height: 14px;
+}
+.content-section img {
+  width: 100%;
+}
 #top-banner {
   background: transparent url('../images/header-bg.jpg') no-repeat 50% 50%;
   margin: 3vw auto;
@@ -289,6 +618,7 @@ blockqoute {
   font-size: 30px;
   line-height: 42px;
   color: #5f5e5e;
+  margin: 0;
 }
 #top-banner .banner .info:before {
   content: '';
@@ -406,6 +736,476 @@ blockqoute {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media screen and (min-width: 991px) and (max-width: 1440px) {
+  #top-banner .banner {
+    max-width: 80vw;
+  }
+  #top-banner .banner .info {
+    max-width: 60vw;
+  }
+  #top-banner .banner .info p {
+    font-size: 2vw;
+    line-height: 3vw;
+  }
+  #top-banner .banner .info:before {
+    width: 6vw;
+    height: 6vw;
+    background-size: cover;
+  }
+  #video-banner {
+    margin: 3vw auto;
+    background-size: 80vw;
+  }
+  #video-banner .video {
+    max-width: 80vw;
+    min-height: 57vw;
+  }
+  #video-banner .video iframe {
+    top: 189px;
+    width: 90%;
+    height: 555px;
+  }
+  #how-to .banner {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+  #how-to .banner .info {
+    max-width: 89.5%;
+    margin: 0 auto;
+  }
+  #how-to .banner .info ul li span {
+    font-size: 5vw;
+    line-height: 5vw;
+  }
+  #how-to .banner .info ul li a {
+    font-size: 2vw;
+    line-height: 3vw;
+    background: #ec1c23;
+    color: #fff;
+    padding: 1vw 1vw 1vw 3vw;
+    z-index: 1;
+    bottom: 15px;
+    right: 30px;
+  }
+  #sign-up .banner {
+    max-width: 80vw;
+  }
+  #sign-up .banner a {
+    font-size: 3vw;
+    line-height: 3vw;
+    padding: 2vw 2vw 2vw 4vw;
+    bottom: 10.5vw;
+  }
+}
+@media screen and (min-width: 991px) and (max-width: 1368px) {
+  #top-banner .banner {
+    max-width: 80vw;
+  }
+  #top-banner .banner .info {
+    max-width: 60vw;
+    margin: -4vw auto 0 auto;
+  }
+  #top-banner .banner .info:before {
+    width: 6vw;
+    height: 6vw;
+    background-size: cover;
+  }
+  #video-banner {
+    margin: 3vw auto;
+    background-size: 80vw;
+  }
+  #video-banner .video {
+    max-width: 80vw;
+    min-height: 57vw;
+  }
+  #video-banner .video iframe {
+    top: 193px;
+    width: 90%;
+    height: 526px;
+    border: 3px solid #5f5e5e;
+  }
+  #how-to .banner {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+  #how-to .banner .info {
+    max-width: 89.5%;
+    margin: 0 auto;
+  }
+  #how-to .banner .info ul li span {
+    font-size: 5vw;
+    line-height: 5vw;
+    border: 3px solid #5f5e5e;
+  }
+  #how-to .banner .info ul li a {
+    border: 3px solid #5f5e5e;
+    font-size: 2vw;
+    line-height: 3vw;
+    background: #ec1c23;
+    color: #fff;
+    padding: 1vw 1vw 1vw 3vw;
+    z-index: 1;
+    bottom: 12px;
+    right: 30px;
+  }
+  #how-to .banner .info .back-block {
+    border: 3px solid #5f5e5e;
+  }
+  #sign-up .banner {
+    max-width: 80vw;
+  }
+  #sign-up .banner a {
+    font-size: 3vw;
+    line-height: 3vw;
+    padding: 2vw 2vw 2vw 4vw;
+    bottom: 10.5vw;
+  }
+}
+@media screen and (min-width: 991px) and (max-width: 1280px) {
+  #top-banner .banner {
+    max-width: 80vw;
+  }
+  #top-banner .banner .info {
+    max-width: 60vw;
+    margin: -4vw auto 0 auto;
+  }
+  #top-banner .banner .info:before {
+    width: 6vw;
+    height: 6vw;
+    background-size: cover;
+  }
+  #video-banner {
+    margin: 3vw auto;
+    background-size: 80vw;
+  }
+  #video-banner .video {
+    max-width: 80vw;
+    min-height: 57vw;
+  }
+  #video-banner .video iframe {
+    top: 167px;
+    width: 90%;
+    height: 494px;
+    border: 3px solid #5f5e5e;
+  }
+  #how-to .banner {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+  #how-to .banner .info {
+    max-width: 89.5%;
+    margin: 0 auto;
+  }
+  #how-to .banner .info ul li span {
+    border: 3px solid #5f5e5e;
+    font-size: 5vw;
+    line-height: 5vw;
+  }
+  #how-to .banner .info ul li a {
+    border: 3px solid #5f5e5e;
+    font-size: 2vw;
+    line-height: 3vw;
+    background: #ec1c23;
+    color: #fff;
+    padding: 1vw 1vw 1vw 3vw;
+    z-index: 1;
+    bottom: 12px;
+    right: 30px;
+  }
+  #how-to .banner .info .back-block {
+    border: 3px solid #5f5e5e;
+  }
+  #sign-up .banner {
+    max-width: 80vw;
+  }
+  #sign-up .banner a {
+    font-size: 3vw;
+    line-height: 3vw;
+    padding: 2vw 2vw 2vw 4vw;
+    bottom: 10.5vw;
+  }
+}
+@media screen and (min-width: 991px) and (max-width: 1024px) {
+  #top-banner {
+    background: transparent url(../images/header-bg.jpg) no-repeat 50% 40%;
+    background-size: 100%;
+  }
+  #top-banner .banner {
+    max-width: 80vw;
+  }
+  #top-banner .banner .info {
+    max-width: 60vw;
+    margin: -4vw auto 0 auto;
+  }
+  #top-banner .banner .info:before {
+    width: 6vw;
+    height: 6vw;
+    background-size: cover;
+  }
+  #video-banner {
+    margin: 3vw auto;
+    background-size: 80vw;
+  }
+  #video-banner .video {
+    max-width: 80vw;
+    min-height: 57vw;
+  }
+  #video-banner .video iframe {
+    top: 132px;
+    width: 90%;
+    height: 396px;
+    border: 2px solid #5f5e5e;
+  }
+  #how-to .banner {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+  #how-to .banner .info {
+    max-width: 89.5%;
+    margin: 0 auto;
+  }
+  #how-to .banner .info ul li span {
+    border: 3px solid #5f5e5e;
+    font-size: 5vw;
+    line-height: 5vw;
+  }
+  #how-to .banner .info ul li a {
+    border: 3px solid #5f5e5e;
+    font-size: 2vw;
+    line-height: 3vw;
+    background: #ec1c23;
+    color: #fff;
+    padding: 1vw 1vw 1vw 3vw;
+    z-index: 1;
+    bottom: 12px;
+    right: 30px;
+  }
+  #how-to .banner .info .back-block {
+    border: 3px solid #5f5e5e;
+    left: 76px;
+  }
+  #sign-up {
+    margin: -200px auto 3vw auto;
+  }
+  #sign-up .banner {
+    max-width: 80vw;
+  }
+  #sign-up .banner a {
+    font-size: 3vw;
+    line-height: 3vw;
+    padding: 2vw 2vw 2vw 4vw;
+    bottom: 10.5vw;
+  }
+  .content-section {
+    margin: 1vw auto;
+  }
+}
+@media screen and (min-width: 200px) and (max-width: 990px) {
+  #top-banner {
+    background: transparent url(../images/header-bg.jpg) no-repeat 50% 45%;
+    background-size: 100%;
+  }
+  #top-banner .banner {
+    max-width: 80vw;
+  }
+  #top-banner .banner .info {
+    max-width: 80vw;
+    margin: -1vw auto 0 auto;
+    border: 1px solid #5f5e5e;
+    padding: 14vw 7vw 7vw 7vw;
+  }
+  #top-banner .banner .info p {
+    font-size: 4vw;
+    line-height: 7vw;
+  }
+  #top-banner .banner .info:before {
+    width: 12vw;
+    height: 12vw;
+    background-size: cover;
+  }
+  #video-banner {
+    margin: 3vw auto;
+    background-size: 80vw;
+  }
+  #video-banner .video {
+    max-width: 80vw;
+    min-height: 57vw;
+  }
+  #video-banner .video iframe {
+    top: 65px;
+    width: 95%;
+    height: 188px;
+    border: 1px solid #5f5e5e;
+  }
+  #how-to .banner {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+  #how-to .banner .info {
+    max-width: 89.5%;
+    margin: 0 auto;
+  }
+  #how-to .banner .info ul {
+    padding-left: 15px;
+  }
+  #how-to .banner .info ul li span {
+    border: 1px solid #5f5e5e;
+    font-size: 5vw;
+    line-height: 5vw;
+  }
+  #how-to .banner .info ul li a {
+    border: 1px solid #5f5e5e;
+    font-size: 2vw;
+    line-height: 3vw;
+    background: #ec1c23;
+    color: #fff;
+    padding: 1vw 1vw 1vw 3vw;
+    z-index: 1;
+    bottom: 5px;
+    right: 11px;
+  }
+  #how-to .banner .info .back-block {
+    border: 1px solid #5f5e5e;
+    left: 34px;
+  }
+  #sign-up {
+    margin: -120px auto 3vw auto;
+  }
+  #sign-up .banner {
+    max-width: 80vw;
+  }
+  #sign-up .banner a {
+    font-size: 3vw;
+    line-height: 3vw;
+    padding: 2vw 2vw 2vw 4vw;
+    bottom: 10.5vw;
+  }
+  .content-section {
+    margin: 1vw auto;
+  }
+  .content-section .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  footer {
+    padding: 7vw 14vw;
+    text-align: center;
+    margin-top: 10vw;
+  }
+  footer .logo {
+    margin-bottom: 6vw;
+  }
+  footer .footer-section {
+    margin-bottom: 4vw;
+  }
+  footer .copyright {
+    margin: 5vw auto;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 990px) {
+  #video-banner {
+    margin: 3vw auto;
+    background-size: 80vw;
+  }
+  #video-banner .video {
+    max-width: 80vw;
+    min-height: 57vw;
+  }
+  #video-banner .video iframe {
+    top: 100px;
+    width: 95%;
+    height: 296px;
+    border: 1px solid #5f5e5e;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 414px) {
+  #top-banner {
+    background: transparent url(../images/header-bg.jpg) no-repeat 50% 45%;
+    background-size: 100%;
+  }
+  #top-banner .banner {
+    max-width: 80vw;
+  }
+  #top-banner .banner .info {
+    max-width: 80vw;
+    margin: -1vw auto 0 auto;
+    border: 1px solid #5f5e5e;
+    padding: 14vw 7vw 7vw 7vw;
+  }
+  #top-banner .banner .info p {
+    font-size: 4vw;
+    line-height: 7vw;
+  }
+  #top-banner .banner .info:before {
+    width: 12vw;
+    height: 12vw;
+    background-size: cover;
+  }
+  #video-banner {
+    margin: 3vw auto;
+    background-size: 80vw;
+  }
+  #video-banner .video {
+    max-width: 80vw;
+    min-height: 57vw;
+  }
+  #video-banner .video iframe {
+    top: 55px;
+    width: 95%;
+    height: 159px;
+    border: 1px solid #5f5e5e;
+  }
+  #how-to .banner {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+  #how-to .banner .info {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  #how-to .banner .info ul {
+    padding-left: 15px;
+  }
+  #how-to .banner .info ul li span {
+    border: 1px solid #5f5e5e;
+    font-size: 5vw;
+    line-height: 5vw;
+  }
+  #how-to .banner .info ul li a {
+    border: 1px solid #5f5e5e;
+    font-size: 2.7vw;
+    line-height: 3vw;
+    background: #ec1c23;
+    color: #fff;
+    padding: 1vw 1vw 1vw 3vw;
+    z-index: 1;
+    bottom: 3px;
+    right: 13px;
+  }
+  #how-to .banner .info .back-block {
+    border: 1px solid #5f5e5e;
+    left: 31px;
+  }
+  #sign-up {
+    margin: -100px auto 3vw auto;
+  }
+  #sign-up .banner {
+    max-width: 80vw;
+  }
+  #sign-up .banner a {
+    font-size: 3vw;
+    line-height: 3vw;
+    padding: 2vw 2vw 2vw 4vw;
+    bottom: 10.5vw;
+  }
+  .content-section {
+    margin: 1vw auto;
+  }
+  .content-section .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
 }

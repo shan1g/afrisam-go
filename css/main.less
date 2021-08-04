@@ -176,6 +176,7 @@ body {
 }
 
 @mainred: #ec1c23;
+@maingrey: #7d7e81;
 
 @import url("typo.less");
 
@@ -220,6 +221,398 @@ body {
   -webkit-box-shadow: inset 0 0 76px @mainred;
 }
 
+@keyframes loading-anim {
+  0% {
+    transform: translate(0, 0);
+    width:0;
+  }
+  100% {
+    transform: translate(300%, 0);
+    width:45%;
+  }
+}
+.page-loader{
+  position: fixed;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  opacity: 1;
+  background: #fff;
+  display: block;
+  will-change:opacity;
+  -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.8s;
+  -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.8s;
+  -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.8s;
+  transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.8s;
+
+  .logo {
+    display:block;
+    margin:0 auto;
+    width:100%;
+    max-width:10vw;
+    margin-top: 20vw;
+
+    -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+    -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+    -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+    transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+  }
+
+
+  &.loaded {
+    //visibility: hidden;
+    /*    display: none;*/
+    opacity: 0;
+
+    .logo {
+      margin-top: -5vw;
+      opacity: 0;
+    }
+    .loader-bar {
+      height: 0;
+    }
+
+  }
+
+  .loader-bar {
+    width: 10%;
+    height: 10px;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 9;
+    position: relative;
+    top: 2vw;
+
+    &:after {
+      content:'';
+      background:#7d7e81;
+      position:absolute;
+      width:20%;
+      height:45%;
+      left:0;
+      top:0px;
+
+      -webkit-animation: loading-anim 3s infinite forwards;
+      -khtml-animation: loading-anim 3s infinite forwards;
+      -moz-animation: loading-anim 3s infinite forwards;
+      -ms-animation: loading-anim 3s infinite forwards;
+      -o-animation: loading-anim 3s infinite forwards;
+      -webkit-animation-play-state: running;
+      animation-play-state: running;
+
+      -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+      -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+      -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+      transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+    }
+    &:before {
+      content:'';
+      background:@mainred;
+      position:absolute;
+      width:20%;
+      height:45%;
+      left:0;
+      top:0px;
+
+      -webkit-animation: loading-anim 3s infinite reverse;
+      -khtml-animation: loading-anim 3s infinite reverse;
+      -moz-animation: loading-anim 3s infinite reverse;
+      -ms-animation: loading-anim 3s infinite reverse;
+      -o-animation: loading-anim 3s infinite reverse;
+      -webkit-animation-play-state: running;
+      animation-play-state: running;
+
+      -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+      -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+      -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+      transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 1.3s;
+    }
+  }
+}
+#rotateScreen {
+  display: block;
+  position: fixed;
+  opacity:0;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background: @mainred;
+  background-size: cover;
+  will-change: transform;
+  //-webkit-transform: scale(0);
+  //-khtml-transform: scale(0);
+  //-moz-transform: scale(0);
+  //-ms-transform: scale(0);
+  //transform: scale(0);
+  -webkit-transition: all cubic-bezier(0.18, 0.89, 0.26, 1.08) 0.7s;
+  -khtml-transition: all cubic-bezier(0.18, 0.89, 0.26, 1.08) 0.7s;
+  -moz-transition: all cubic-bezier(0.18, 0.89, 0.26, 1.08) 0.7s;
+  -ms-transition: all cubic-bezier(0.18, 0.89, 0.26, 1.08) 0.7s;
+  transition: all cubic-bezier(0.18, 0.89, 0.26, 1.08) 0.7s;
+
+  h1,h2 {
+    color:#ffffff;
+    text-align: center;
+    font-style:normal;
+    opacity:0;
+    max-width: 50vw;
+    margin: 0 auto 20px auto;
+
+    -webkit-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+    -khtml-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+    -moz-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+    -ms-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+    transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+
+
+  }
+  h1 {
+    position:relative;
+    top:40px;
+    font-size: 3vw;
+    line-height: 4vw;
+    transition-delay:1.4s;
+    font-family: 'telkom-bold';
+  }
+  h2 {
+    font-family: 'telkom-light';
+    position:relative;
+    top:80px;
+    font-size: 2vw;
+    transition-delay:1.6s;
+  }
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(16deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  span {
+    width: 64px;
+    height: 64px;
+    display:block;
+    margin: -14vw auto 55vw auto;
+    opacity:0;
+    position:relative;
+
+    -webkit-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+    -khtml-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+    -moz-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+    -ms-transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+    transition: all cubic-bezier(0.1, 1.02, 0.32, 1.28) 0.6s;
+
+    transition-delay:1.2s;
+
+    &:after {
+      content:'';
+      position:absolute;
+      top:5px; left:5px;
+      z-index:2;
+      width: 64px;
+      height: 64px;
+      display:block;
+      background:url(../images/rotate-display-icon2.svg) no-repeat top left;
+
+      -webkit-animation: rotate 2s infinite forwards;
+      -khtml-animation: rotate 2s infinite forwards;
+      -moz-animation: rotate 2s infinite forwards;
+      -ms-animation: rotate 2s infinite forwards;
+      -o-animation: rotate 2s infinite forwards;
+      -webkit-animation-play-state: running;
+      animation-play-state: running;
+    }
+
+    &:before {
+      content:'';
+      position:absolute;
+      top:5px; left:5px;
+      z-index:4;
+      width: 64px;
+      height: 64px;
+      display:block;
+      background:url(../images/rotate-display-icon.svg) no-repeat top left;
+    }
+  }
+
+  &.active {
+    opacity:1;
+    z-index: 999;
+    //-webkit-transform: scale(1);
+    //-khtml-transform: scale(1);
+    //-moz-transform: scale(1);
+    //-ms-transform: scale(1);
+    //transform: scale(1);
+    //width: 100%;
+    display: block;
+
+    h1, h2 {
+      opacity:1;
+      top:0;
+    }
+
+    span {
+      margin: 11vw auto 3vw auto;
+      opacity:1;
+    }
+  }
+}
+#backUp {
+
+  display:inline-block;
+  background:@maingrey;
+  padding: 1vw;
+  outline: 0 !important;
+  box-shadow: -2px 8px 19px -17px #272727;
+
+  position: fixed;
+  bottom: 0;
+  right: 2vw;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 4;
+
+  will-change:transform,opacity;
+
+  -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+  -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+  -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+  transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+
+  transform: translateY(300px);
+
+  img {
+    top: 7px;
+    -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+    -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+    -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+    transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.5s;
+  }
+
+  &:hover {
+
+    img {
+      transform: translateY(-5px);
+    }
+  }
+
+  &.minimise {
+    font-size: 0;
+    color:@mainred;
+
+    img {
+      top: 10px;
+    }
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    width:auto;
+    transform: translateY(0);
+  }
+
+  @media screen and (min-width: 200px) and (max-width: 990px) {
+    bottom: 20vw;
+    right: 4vw;
+
+    img {
+      top: 1vw;
+    }
+
+    &.minimise {
+
+      img {
+        top: 10px;
+      }
+    }
+  }
+  @media screen and (min-width: 640px) and (max-width: 990px) {
+    bottom: 10vw;
+    right: 2vw;
+
+    img {
+      top: 1vw;
+    }
+
+    &.minimise {
+
+      img {
+        top: 10px;
+      }
+    }
+  }
+}
+
+header {
+  overflow: hidden;
+
+  .links {
+    float:right;
+    display:flex;
+    margin:1vw 1vw 1vw 1vw;
+
+
+    a {
+      color:#ffffff;
+      font-family: 'frutiger-bold';
+      text-decoration:none;
+      margin-right:10px;
+      background:@mainred;
+      padding:1vw;
+      transform:scale(0.9);
+
+      -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+      -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+      -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+      transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
+
+      &:hover {
+        transform:scale(1);
+      }
+
+      &:last-of-type {
+        margin-right:0;
+      }
+    }
+  }
+}
+footer {
+  padding: 3vw 10vw;
+  background: #fff;
+
+  .logo {
+    max-width: 200px;
+  }
+  .footer-section {
+
+    h2 {
+      margin:0 0 1vw 0;
+      color:@mainred;
+    }
+    a {
+      display:block;
+      color:@maingrey;
+    }
+  }
+  .copyright {
+    color:@maingrey;
+    font-size:12px; line-height:14px;
+  }
+}
+.content-section {
+
+  img {width:100%;}
+}
 #top-banner {
   background:transparent url('../images/header-bg.jpg') no-repeat 50% 50%;
   margin: 3vw auto;
@@ -240,6 +633,7 @@ body {
         font-size:30px;
         line-height:42px;
         color:#5f5e5e;
+        margin:0;
       }
 
       &:before {
@@ -376,7 +770,7 @@ body {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-
+@import url("responsive.less");
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
 }

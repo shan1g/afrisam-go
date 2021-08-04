@@ -3,18 +3,20 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>AfriSam</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=0,shrink-to-fit=1">
   <meta property="og:title" content="">
   <meta property="og:type" content="">
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
 
-  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="apple-touch-icon" href="images/afrisam-favicon.ico">
   <!-- Place favicon.ico in the root directory -->
+
+  <link rel="preload" href="css/main.css" as="style">
+  <link rel="preload" href="js/main.js" as="script">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -25,10 +27,26 @@
 </head>
 
 <body>
-
+  <div class="page-loader visible" id="page-loader">
+    <img class="logo" src="images/afrisam-logo.svg" alt="">
+    <div class="loader-bar"></div>
+  </div>
+  <div id="rotateScreen">
+    <span class="icon"></span>
+    <h1>Our website is best<br/> viewed in portrait</h1>
+    <h2>Please rotate your display</h2>
+  </div>
+  <a id="backUp" href="#rotateScreen" >
+    <img src="images/icons/btn-back-to-top.svg" alt="go back to top">
+  </a>
+  <header>
+    <div class="links">
+      <a href="#sign-up">SIGN IN / REGISTER NOW</a>
+    </div>
+  </header>
   <section>
     <div class="row">
-      <article id="top-banner" class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" >
+      <article id="top-banner" class="content-section col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" >
 
         <div class="banner">
           <picture>
@@ -44,12 +62,12 @@
         </div>
 
       </article>
-      <article id="video-banner" class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" >
+      <article id="video-banner" class="content-section col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" >
         <div class="video">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/7nDxOuYXM_U?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </article>
-      <article id="how-to" class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" >
+      <article id="how-to" class="content-section col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" >
 
         <div class="banner">
           <picture>
@@ -84,7 +102,7 @@
         </div>
 
       </article>
-      <article id="sign-up" class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" >
+      <article id="sign-up" class="content-section col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" >
 
         <div class="banner">
             <picture>
@@ -96,9 +114,27 @@
 
       </article>
     </div>
-
   </section>
-
+  <footer>
+    <div class="row">
+      <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+        <img class="logo" src="images/afrisam-logo.svg" alt="">
+      </div>
+      <div class="footer-section col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+        <h2>title here</h2>
+        <a href="">link here</a>
+        <a href="">link here</a>
+        <a href="">link here</a>
+      </div>
+      <div class="footer-section col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+        <h2>title here</h2>
+        <a href="">link here</a>
+        <a href="">link here</a>
+        <a href="">link here</a>
+      </div>
+      <p class="copyright">© Copyright 2021 AfriSam</p>
+    </div>
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
           integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
