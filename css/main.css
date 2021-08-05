@@ -563,15 +563,16 @@ header .links a {
   text-decoration: none;
   margin-right: 10px;
   background: #ec1c23;
-  padding: 1vw;
+  padding: 10px 20px;
   transform: scale(0.9);
+  border-radius: 15px;
   -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
   -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
   -moz-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
   transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
 }
 header .links a:hover {
-  transform: scale(1);
+  transform: scale(0.95);
 }
 header .links a:last-of-type {
   margin-right: 0;
@@ -602,6 +603,7 @@ footer .copyright {
 #top-banner {
   background: transparent url('../images/header-bg.jpg') no-repeat 50% 50%;
   margin: 3vw auto;
+  background-size: contain;
 }
 #top-banner .banner {
   max-width: 1293px;
@@ -642,6 +644,13 @@ footer .copyright {
   min-height: 920px;
   margin: 0 auto;
   position: relative;
+}
+#video-banner .video #getStarted {
+  position: absolute;
+  bottom: 2px;
+  left: 5vw;
+  margin: 0 auto;
+  max-width: 530px;
 }
 #video-banner .video iframe {
   position: absolute;
@@ -740,6 +749,73 @@ footer .copyright {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+  #top-banner .banner {
+    max-width: 80vw;
+  }
+  #top-banner .banner .info {
+    max-width: 60vw;
+  }
+  #top-banner .banner .info p {
+    font-size: 2vw;
+    line-height: 3vw;
+  }
+  #top-banner .banner .info:before {
+    width: 6vw;
+    height: 6vw;
+    background-size: cover;
+  }
+  #video-banner {
+    margin: 3vw auto;
+    background-size: 80vw;
+  }
+  #video-banner .video {
+    max-width: 80vw;
+    min-height: 57vw;
+  }
+  #video-banner .video #getStarted {
+    bottom: 47px;
+    left: 4vw;
+    margin: 0 auto;
+    max-width: 30vw;
+  }
+  #video-banner .video iframe {
+    top: 189px;
+    width: 90%;
+    height: 595px;
+  }
+  #how-to .banner {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+  #how-to .banner .info {
+    max-width: 89.5%;
+    margin: -5.3vw auto 0 auto;
+  }
+  #how-to .banner .info ul li span {
+    font-size: 5vw;
+    line-height: 5vw;
+  }
+  #how-to .banner .info ul li a {
+    font-size: 1.85vw;
+    line-height: 3vw;
+    background: #ec1c23;
+    color: #fff;
+    padding: 1vw 1vw 1vw 3vw;
+    z-index: 1;
+    bottom: 15px;
+    right: 30px;
+  }
+  #sign-up .banner {
+    max-width: 80vw;
+  }
+  #sign-up .banner a {
+    font-size: 3vw;
+    line-height: 3vw;
+    padding: 2vw 2vw 2vw 4vw;
+    bottom: 10.5vw;
+  }
+}
 @media screen and (min-width: 991px) and (max-width: 1440px) {
   #top-banner .banner {
     max-width: 80vw;
@@ -764,6 +840,12 @@ footer .copyright {
     max-width: 80vw;
     min-height: 57vw;
   }
+  #video-banner .video #getStarted {
+    bottom: 47px;
+    left: 4vw;
+    margin: 0 auto;
+    max-width: 30vw;
+  }
   #video-banner .video iframe {
     top: 189px;
     width: 90%;
@@ -775,14 +857,14 @@ footer .copyright {
   }
   #how-to .banner .info {
     max-width: 89.5%;
-    margin: 0 auto;
+    margin: -5.3vw auto 0 auto;
   }
   #how-to .banner .info ul li span {
     font-size: 5vw;
     line-height: 5vw;
   }
   #how-to .banner .info ul li a {
-    font-size: 2vw;
+    font-size: 1.85vw;
     line-height: 3vw;
     background: #ec1c23;
     color: #fff;
@@ -798,7 +880,7 @@ footer .copyright {
     font-size: 3vw;
     line-height: 3vw;
     padding: 2vw 2vw 2vw 4vw;
-    bottom: 10.5vw;
+    bottom: 10.3vw;
   }
 }
 @media screen and (min-width: 991px) and (max-width: 1368px) {
@@ -822,6 +904,12 @@ footer .copyright {
     max-width: 80vw;
     min-height: 57vw;
   }
+  #video-banner .video #getStarted {
+    bottom: 32px;
+    left: 4vw;
+    margin: 0 auto;
+    max-width: 30vw;
+  }
   #video-banner .video iframe {
     top: 193px;
     width: 90%;
@@ -834,7 +922,6 @@ footer .copyright {
   }
   #how-to .banner .info {
     max-width: 89.5%;
-    margin: 0 auto;
   }
   #how-to .banner .info ul li span {
     font-size: 5vw;
@@ -843,8 +930,6 @@ footer .copyright {
   }
   #how-to .banner .info ul li a {
     border: 3px solid #5f5e5e;
-    font-size: 2vw;
-    line-height: 3vw;
     background: #ec1c23;
     color: #fff;
     padding: 1vw 1vw 1vw 3vw;
@@ -862,7 +947,7 @@ footer .copyright {
     font-size: 3vw;
     line-height: 3vw;
     padding: 2vw 2vw 2vw 4vw;
-    bottom: 10.5vw;
+    bottom: 10.3vw;
   }
 }
 @media screen and (min-width: 991px) and (max-width: 1280px) {
@@ -886,6 +971,12 @@ footer .copyright {
     max-width: 80vw;
     min-height: 57vw;
   }
+  #video-banner .video #getStarted {
+    bottom: 42px;
+    left: 4vw;
+    margin: 0 auto;
+    max-width: 30vw;
+  }
   #video-banner .video iframe {
     top: 167px;
     width: 90%;
@@ -898,7 +989,6 @@ footer .copyright {
   }
   #how-to .banner .info {
     max-width: 89.5%;
-    margin: 0 auto;
   }
   #how-to .banner .info ul li span {
     border: 3px solid #5f5e5e;
@@ -907,8 +997,6 @@ footer .copyright {
   }
   #how-to .banner .info ul li a {
     border: 3px solid #5f5e5e;
-    font-size: 2vw;
-    line-height: 3vw;
     background: #ec1c23;
     color: #fff;
     padding: 1vw 1vw 1vw 3vw;
@@ -926,7 +1014,7 @@ footer .copyright {
     font-size: 3vw;
     line-height: 3vw;
     padding: 2vw 2vw 2vw 4vw;
-    bottom: 10.5vw;
+    bottom: 10.3vw;
   }
 }
 @media screen and (min-width: 991px) and (max-width: 1024px) {
@@ -953,6 +1041,12 @@ footer .copyright {
   #video-banner .video {
     max-width: 80vw;
     min-height: 57vw;
+  }
+  #video-banner .video #getStarted {
+    bottom: 32px;
+    left: 4vw;
+    margin: 0 auto;
+    max-width: 30vw;
   }
   #video-banner .video iframe {
     top: 132px;
@@ -1038,6 +1132,12 @@ footer .copyright {
     max-width: 90vw;
     min-height: 57vw;
   }
+  #video-banner .video #getStarted {
+    bottom: -1px;
+    left: 4vw;
+    margin: 0 auto;
+    max-width: 46vw;
+  }
   #video-banner .video iframe {
     top: 55px;
     width: 95%;
@@ -1105,10 +1205,12 @@ footer .copyright {
     margin-bottom: 7vw;
   }
   header .links {
-    margin: 0;
+    margin: 3vw 3vw 1vw 1vw;
   }
   header .links a {
-    transform: scale(1);
+    transform: scale(0.9);
+    font-size: 2vw;
+    border-radius: 10px;
   }
   footer {
     padding: 7vw 14vw;
@@ -1138,6 +1240,12 @@ footer .copyright {
   #video-banner .video {
     max-width: 80vw;
     min-height: 57vw;
+  }
+  #video-banner .video #getStarted {
+    bottom: 22px;
+    left: 4vw;
+    margin: 0 auto;
+    max-width: 39vw;
   }
   #video-banner .video iframe {
     top: 100px;
@@ -1206,7 +1314,7 @@ footer .copyright {
   #video-banner .video iframe {
     top: 42px;
     width: 95%;
-    height: 162px;
+    height: 163px;
     border: 1px solid #5f5e5e;
   }
   #how-to .banner {
@@ -1242,7 +1350,7 @@ footer .copyright {
     height: 85%;
   }
 }
-@media screen and (min-width: 321px) and (max-width: 375px) {
+@media screen and (min-width: 100px) and (max-width: 321px) {
   #video-banner {
     margin: 3vw auto;
     background-size: 90vw;

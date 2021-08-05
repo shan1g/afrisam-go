@@ -569,8 +569,9 @@ header {
       text-decoration:none;
       margin-right:10px;
       background:@mainred;
-      padding:1vw;
-      transform:scale(0.9);
+      padding: 10px 20px;
+      transform: scale(0.9);
+      border-radius: 15px;
 
       -webkit-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
       -khtml-transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
@@ -578,7 +579,7 @@ header {
       transition: all cubic-bezier(0.34, 0.57, 0.21, 0.99) 0.4s;
 
       &:hover {
-        transform:scale(1);
+        transform:scale(0.95);
       }
 
       &:last-of-type {
@@ -618,6 +619,7 @@ footer {
 #top-banner {
   background:transparent url('../images/header-bg.jpg') no-repeat 50% 50%;
   margin: 3vw auto;
+  background-size: contain;
 
   .banner {
     max-width:1293px;
@@ -660,6 +662,13 @@ footer {
     margin: 0 auto;
     position:relative;
 
+    #getStarted {
+      position:absolute;
+      bottom: 2px;
+      left: 5vw;
+      margin: 0 auto;
+      max-width: 530px;
+    }
     iframe {
       position:absolute;
       top: 189px;
