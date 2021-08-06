@@ -606,14 +606,14 @@ footer .copyright {
   background-size: contain;
 }
 #top-banner .banner {
-  max-width: 1293px;
+  max-width: 1170px;
   margin: 0 auto;
 }
 #top-banner .banner .info {
   background: #d1d2d3;
   position: relative;
-  max-width: 40vw;
-  margin: -5vw auto 0 auto;
+  max-width: 48vw;
+  margin: -3vw auto 0 auto;
   padding: 2vw 2vw 2vw 8vw;
   border: 4px solid #5f5e5e;
 }
@@ -647,8 +647,8 @@ footer .copyright {
 }
 #video-banner .video #getStarted {
   position: absolute;
-  bottom: 2px;
-  left: 5vw;
+  bottom: 18px;
+  left: 3vw;
   margin: 0 auto;
   max-width: 530px;
 }
@@ -665,7 +665,7 @@ footer .copyright {
   margin: 3vw auto;
 }
 #how-to .banner {
-  max-width: 1502px;
+  max-width: 1410px;
   margin: 0 auto;
 }
 #how-to .banner .info {
@@ -702,11 +702,12 @@ footer .copyright {
   font-size: 30px;
   line-height: 42px;
   background: #ec1c23;
+  text-decoration: underline;
   color: #fff;
   padding: 2vw 2vw 2vw 4vw;
   z-index: 1;
   bottom: 28px;
-  right: 30px;
+  right: 50px;
 }
 #how-to .banner .info ul li a b {
   text-transform: uppercase;
@@ -727,7 +728,7 @@ footer .copyright {
   margin: -330px auto 3vw auto;
 }
 #sign-up .banner {
-  max-width: 1517px;
+  max-width: 1420px;
   margin: 0 auto;
   position: relative;
 }
@@ -739,9 +740,9 @@ footer .copyright {
   color: #ec1c23;
   padding: 2vw 2vw 2vw 4vw;
   z-index: 1;
-  bottom: 185px;
+  bottom: 176px;
   left: 0;
-  width: 94%;
+  width: 96%;
   text-align: center;
 }
 /* ==========================================================================
